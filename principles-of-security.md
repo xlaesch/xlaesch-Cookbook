@@ -8,6 +8,8 @@ icon: shield-quartered
 
 ### **Key Acronyms**
 
+**Binary Large Object (blob):** Chunk of raw, unstructured binary data. You don't know what's inside just by looking at it, it could be an image, video clip, or encrypted data.
+
 ### Security Frameworks
 
 **CIA Triad** for data:

@@ -30,6 +30,7 @@
 ## Post-Exploitation
 
 * [Windows](post-exploitation/windows/README.md)
+  * [Credentials Harvesting](post-exploitation/windows/credentials-harvesting.md)
   * [Lateral Movement and Pivoting](post-exploitation/windows/lateral-movement-and-pivoting.md)
   * [Active Directory Enumeration](post-exploitation/windows/active-directory-enumeration.md)
   * [BloodHound](post-exploitation/windows/bloodhound.md)
