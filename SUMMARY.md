@@ -31,6 +31,8 @@
 
 * [Windows](post-exploitation/windows/README.md)
   * [Lateral Movement and Pivoting](post-exploitation/windows/lateral-movement-and-pivoting.md)
+  * [Active Directory Enumeration](post-exploitation/windows/active-directory-enumeration.md)
+  * [BloodHound](post-exploitation/windows/bloodhound.md)
 
 ## Web Hacking
 

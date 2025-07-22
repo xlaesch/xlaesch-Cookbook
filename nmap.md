@@ -107,7 +107,7 @@ Nmap classifies results as the following:
 
 Nmap can only manipulates certain parts (**in red**) of the TCP header
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 To understand the different TCP flags, view the Principles of Networks page.
 

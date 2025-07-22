@@ -64,6 +64,8 @@ This is not easily done because most services are stored in the `Program Files` 
 
 `wimc product get name,version,vendor` shows software installed on machine (Note: may not show all programs, as some are installed differently)
 
+`reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall` to view installed applications via the Windows Registry
+
 #### Unattended Windows Installations
 
 Administrators need to install Windows on a large number of hosts so they use Windows Deployment Services to deploy a single OS image to a lot of hosts through the network. Requires an Administrator account to perform initial setup, which may be stored on local machine:
@@ -85,6 +87,10 @@ C:\Windows\system32\sysprep\sysprep.xml
 `cmdkey /list` lists all credentials stored in the Windows Credential Manager (Note: won't allow you to view them directly)
 
 `runas /savecred /user:admin cmd.exe` run a cmd.exe as the user stored in the Credential Manager
+
+`reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v keyword` to view if auto-log on is stored in the Windows registry
+
+`reg query HKLM /f "password" /t REG_SZ /s` to search the registry for anything related to the password
 
 #### Internet Information Services (IIS) Configuration
 

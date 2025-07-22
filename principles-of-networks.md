@@ -16,6 +16,10 @@ Firewall: hardware or software that permit packets to pass through or blocks the
 
 IDS: intrusion detection system, inspects network packets for specifics behaviors or content signatures
 
+**Socket:** One endpoint of a two-way communication link between two programs running on a network. A software interface that allows application send and receive data. Combination of the an IP address and a port number, there must be a socket on both the client and the server.
+
+**SOCKS proxy:** a general-purpose proxy server that relays any kind of traffic (TCP and sometimes UDP) between a client and a destination server, without interpreting the traffic.
+
 #### OSI, TCP/IP Chart
 
 <figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
@@ -24,21 +28,25 @@ IDS: intrusion detection system, inspects network packets for specifics behavior
 
 Port forwarding is when the router is configured to forward incoming traffic on a specific port (on its WAN/public IP) to a specific device and port on the LAN.
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Protocols
 
-#### Telnet (port 43):
+#### Server Message Block (SMB, port 445)
+
+Protocol that provides shared access to files, printers, and other network resources via the Kerberos and NTLM authentication protocol.
+
+#### Telnet (port 43)
 
 Application Layer protocol used to connect to a virtual terminal, the communication itself is not encrypted.
 
-#### HTTP (port 80):
+#### HTTP (port 80)
 
 Clear text protocol, that can be communicated with a telenet or netcat client to act as a web browser.
 
-#### File Transfer Protocol (FTP, port 21):
+#### File Transfer Protocol (FTP, port 21)
 
-Transfer of files between systems effecient. Sent in clear text and can be accessed with an `ftp` client. Uses TCP connect.
+Transfer of files between systems efficient. Sent in clear text and can be accessed with an `ftp` client. Uses TCP connect.
 
 #### Email Delivery
 
@@ -55,7 +63,7 @@ All this information needs to be propagated via protocol.
 * POP3 (port 110) is responsible for MDA portion.
 * IMAP (port 143) is the more sophisticated version of POP3 allowing message states to be synchronized across multiple devices.
 
-#### Transport Layer Security (TLS):
+#### Transport Layer Security (TLS)
 
 <figure><img src=".gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
@@ -90,7 +98,7 @@ How Certificates are used in SSL/TLS:
 * can copy over files over SSH with `SCP` (secure copy protocol)
   * `scp username@MACHINE_IP:filepath path_to_save`&#x20;
 
-#### Domain Name System (DNS, port 53):
+#### Domain Name System (DNS, port 53)
 
 <figure><img src=".gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
@@ -99,7 +107,7 @@ How Certificates are used in SSL/TLS:
 * TLD Server: Manages a specific extension (like `.com` or `.org`) and points to the domain's authoritative server.
 * Authoritative Server: The final source of truth that holds the actual DNS records for a specific domain.
 
-**Virtual Hosts:**
+**Virtual Hosts**
 
 DNS doesn't know about virtual hosts. Its only job is to point multiple domain names to a single IP address.
 

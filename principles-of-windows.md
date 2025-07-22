@@ -41,6 +41,12 @@ Network in this case means network resources (like file shares or databases) tha
 
 In Windows Active Directory environments, a **domain** is a logical grouping of computers and users. It centralizes identity and access management. Each user in the domain has a login in the form of: `DOMAIN\username`&#x20;
 
+**Relative Identifier:** used to assign unique identifiers to user and group objects. Some standard RIDs are 500 (Administrator), 501 (Guest), 512 (Domain Administrator), 513 (Domain User), 514 (Domain Guest). Typical user accounts are in the 1000+
+
+### Lightweight Directory Access Protocol (LDAP)
+
+A lightweight protocol for managing directory services that is used in Microsoft AD.
+
 ### NTLM Authentication
 
 A legacy authentication protocol used by Windows network.
