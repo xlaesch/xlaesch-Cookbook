@@ -8,6 +8,8 @@ icon: windows
 
 ### Powershell
 
+`powershell -ExecutionPolicy Bypass` to remove execution restrictions on scripts
+
 `Get-Module -ListAvailable ModuleName` confirm if a module is available
 
 `Import-Module ModuleName` if module is available, import it
@@ -19,6 +21,20 @@ icon: windows
 `where /r C:\\ filename` recursive search in the C:\\
 
 `icacls` to view file permissions
+
+## Key Concepts
+
+### Security Account Manager (SAM)
+
+A Microsoft Windows database that contains local account information such as usernames and passwords. The SAM database stores these details in an encrypted format to make them harder to be retrieved. Moreover, it can not be read and accessed by any users while the Windows operating system is running.
+
+### Local Security Authority Subsystem Service (LSASS)
+
+A WIndows process that handles the operating system security policy and enforces it on a system. It verifies logged in accounts and ensures passwords, hashes, and Kerberos tickets. The process is ran as `SYSTEM` .
+
+### Windows Credential Manager
+
+A Windows feature that stores logon-sensitive information for websites, applications, and networks. Contains usernames, passwords, and internet address.
 
 ## Users
 
