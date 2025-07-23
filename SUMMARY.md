@@ -11,10 +11,7 @@
 
 * [Passive Reconnaissance](reconnaissance/passive-reconnaissance.md)
 * [Active Reconnaissance](reconnaissance/active-reconnaissance.md)
-
-***
-
-* [Nmap](nmap.md)
+* [Nmap](reconnaissance/nmap.md)
 
 ## Exploitation
 

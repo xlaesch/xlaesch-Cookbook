@@ -125,3 +125,7 @@ Make a malicious .msi file to exploit.
 
 `reg query HKLM\SYSTEM\CurrentControlSet\Services\` to view service configurations to learn about a service.&#x20;
 
+#### Psexec
+
+`psexec.exe -s cmd.exe` To elevate a shell to `SYSTEM`
+

@@ -22,7 +22,7 @@ description: Gather information about target systems by making contact with the 
 
 * enumerates the network with ICMP packets, incrementing their TTL until the route is mapped
 
-{% content-ref url="../nmap.md" %}
-[nmap.md](../nmap.md)
+{% content-ref url="nmap.md" %}
+[nmap.md](nmap.md)
 {% endcontent-ref %}
 
