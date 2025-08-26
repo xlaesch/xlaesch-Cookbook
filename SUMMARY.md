@@ -36,11 +36,11 @@
 
 * [Content Discovery Basics](web-hacking/content-discovery-basics.md)
 * [Subdomain Enumeration](web-hacking/subdomain-enumeration.md)
+* [SQL Injection](web-hacking/sql-injection.md)
 * [IDOR](web-hacking/idor.md)
 * [File Inclusion](web-hacking/file-inclusion.md)
 * [SSRF](web-hacking/ssrf.md)
 * [XSS](web-hacking/xss.md)
 * [Race Conditions](web-hacking/race-conditions.md)
 * [Command Injection](web-hacking/command-injection.md)
-* [SQL Injection](web-hacking/sql-injection.md)
 * [Burp Suite](web-hacking/burp-suite.md)

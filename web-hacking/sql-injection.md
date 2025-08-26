@@ -3,6 +3,7 @@
 user-provided data gets included in the SQL query
 
 * `;--` ⇒ end of the SQL statement and the two dashes cause everything afterwards to be treated as a comment
+  * e.g. using `'or 1=1--` will make the database return true if there is no input validation
 * In-Band: the same method of communicating being used to exploit the vulnerability and also receive results
 * Error-Based: most useful for obtaining info about database structure, error messages from the database are printed directly to the browser screen ⇒ enumerate whole database
   * use certain characters until an error message is produced ⇒ single aprostrophes or quotation marks
