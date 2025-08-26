@@ -21,12 +21,14 @@ Stored XSS:
   * user profile info
   * website listing
   * any data that is stored in the web application can be tried to run javascript payload
+* The _True-Client-IP_  header is similar to the _X-Forwarded-For_ header, both tell the server or proxy what the IP of the client is. Editing this can lead to an XSS
 
 DOM Based XSS:
 
 * Document Object model ⇒ programming interface for HTML documents
 * JS execution happens directly in the browser without nerw pages being laooded
 * any variable that an attacker can have control over can be leveraged
+  * e.g used in Juice Box `<iframe src="javascript:alert('xss')">`
 
 Blind XSS:
 

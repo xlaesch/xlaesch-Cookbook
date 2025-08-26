@@ -34,6 +34,7 @@
 
 ## Web Hacking
 
+* [File Uploads](web-hacking/file-uploads.md)
 * [Content Discovery Basics](web-hacking/content-discovery-basics.md)
 * [Subdomain Enumeration](web-hacking/subdomain-enumeration.md)
 * [SQL Injection](web-hacking/sql-injection.md)
