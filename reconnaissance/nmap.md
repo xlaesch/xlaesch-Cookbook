@@ -4,7 +4,11 @@ description: >-
   of hosts or subnet.
 ---
 
-# Nmap
+# Theory
+
+---
+
+# Practice
 
 `nmap SCAN_TYPE OPTIONS TARGET` is the general syntax&#x20;
 

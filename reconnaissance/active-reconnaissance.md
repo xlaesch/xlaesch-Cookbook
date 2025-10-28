@@ -1,7 +1,6 @@
 ---
 description: Gather information about target systems by making contact with the target.
 ---
-
 # Active Reconnaissance
 
 ### Methods
