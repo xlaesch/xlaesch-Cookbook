@@ -28,7 +28,5 @@ The ability to include remote files into a vulnerable application.
 
 * Injecting an external URL into the `include` function with `allow_url_fopen` `on` can allow an attack to set up an HTTP server and serve a PHP payload that will be run by the PHP server.
 
-##
-
 
 

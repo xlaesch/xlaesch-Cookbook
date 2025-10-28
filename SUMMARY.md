@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Red Teaming](principles-of-redteaming.md)
+* [Red Teaming](README.md)
 * [Principles of Security](principles-of-security.md)
 * [Principles of Networks](principles-of-networks.md)
 * [Principles of Identity](principles-of-identity.md)
@@ -11,11 +11,12 @@
 
 * [OSINT](reconnaissance/osint.md)
 * [Host Discovery](reconnaissance/host-discovery.md)
-* [Port Scanning](reconnaissance/port-scanning)
+* [Port Scanning](reconnaissance/port-scanning.md)
 
 ## Exploitation
 
-* [Windows](exploitation/windows.md)
+* [Windows](exploitation/windows/README.md)
+  * [Active Directory Enumeration](exploitation/windows/active-directory-enumeration.md)
 * [Linux](exploitation/linux.md)
 
 ## Privilege Escalation
@@ -24,17 +25,16 @@
 * [Linux](privilege-escalation/linux.md)
 * [Windows](privilege-escalation/windows.md)
 
-## Post-Exploitation
+## Active Directory
 
-* [Windows](post-exploitation/windows/README.md)
-  * [Credentials Harvesting](post-exploitation/windows/credentials-harvesting.md)
-  * [Lateral Movement and Pivoting](post-exploitation/windows/lateral-movement-and-pivoting.md)
-  * [Active Directory Enumeration](post-exploitation/windows/active-directory-enumeration.md)
-  * [BloodHound](post-exploitation/windows/bloodhound.md)
+* [Credentials Harvesting](active-directory/credentials-harvesting.md)
+* [Lateral Movement and Pivoting](active-directory/lateral-movement-and-pivoting.md)
+* [BloodHound](active-directory/bloodhound.md)
 
 ## Web Hacking
 
 * [File Uploads](web-hacking/file-uploads.md)
+* [API](web-hacking/api.md)
 * [Content Discovery Basics](web-hacking/content-discovery-basics.md)
 * [Subdomain Enumeration](web-hacking/subdomain-enumeration.md)
 * [SQL Injection](web-hacking/sql-injection.md)
