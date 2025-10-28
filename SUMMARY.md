@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Red Teaming](README.md)
+* [Red Teaming](principles-of-red-teaming.md)
 * [Principles of Security](principles-of-security.md)
 * [Principles of Networks](principles-of-networks.md)
 * [Principles of Identity](principles-of-identity.md)
