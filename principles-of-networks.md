@@ -4,7 +4,13 @@ icon: wifi
 
 # Principles of Networks
 
-### **Key Concepts**
+## Firewalls
+
+Security measure against unauthorized connection attempts from external networks. Monitors network traffic between firewall and incoming data connections and decides how to handle the connection based on the rules that have been set.
+## IDS/IPS
+
+Intrusion Detection System (IDS) scans for potential attacks, analyzes them, and reports any detected attacks; usually based on pattern matching and signatures. Intrusion Prevention System (IPS) compliments takes specific measures if a potential attack should have been detected.
+### Key Concepts
 
 **Subnetworks:**
 

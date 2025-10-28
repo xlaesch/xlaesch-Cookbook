@@ -9,8 +9,7 @@
 
 ## Reconnaissance
 
-* [Passive Reconnaissance](reconnaissance/passive-reconnaissance.md)
-* [Active Reconnaissance](reconnaissance/active-reconnaissance.md)
+* [OSINT](osint.md)
 * [Nmap](reconnaissance/nmap.md)
 * [Port Scanning](reconnaissance/port-scanning)
 

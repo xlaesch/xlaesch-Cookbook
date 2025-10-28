@@ -1,7 +1,6 @@
 ---
-description: hello world!
+description:
 ---
-
 # Theory
 To conduct a penetration test we have to get an overview of which systems are online, and which ones we can work with.
 
