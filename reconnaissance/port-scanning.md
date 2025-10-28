@@ -24,17 +24,17 @@ Types of scans include
 ### TCP Ports
 
 ```shell
-# SYN scan (default when ran as root, -sS) scanning top 10 TCP ports
+# SYN scan (-sS) scanning top 10 TCP ports
 sudo nmap $HOST --top-ports=10 
 
 # scan at port with DNS resolution (-n), packet trace and disabled ICMP echo requests (-Pn) and ARP ping
 sudo nmap $HOST -p $PORT --packet-trace -Pn -n --disable-arp-ping
 
-# TCP connect scan with no DNS resolution and displaying reason for result
-sudo nmap $HOST -p $PORT -n --reason -sT
+# TCP connect scan (-sT) with displaying reason for result and reducing max retries to 0 (from default of 5)
+sudo nmap $HOST -p $PORT --reason -sT --max-retries=0
 
 # service scan (-sV)
-sudo nmap $HOST -Pn -n --disable-arp-ping --packet-trace -p $PORT --reason  -sV
+sudo nmap $HOST -Pn -p $PORT -sV
 
 # aggressive scan (-A) with service detection, traceroute and default scripts
 sudo nmap $HOST -p $PORT -A
@@ -43,15 +43,15 @@ sudo nmap $HOST -p $PORT -A
 sudo nmap $HOST -p 80 -sV --script vuln 
 
 # insance scan (-T 5) scanning top 100 ports (-F) and outputing in normal formats (-oN)
-sudo nmap $HOST/24 -F -oN tnet.T5 -T 5
+sudo nmap $HOST/24 -F -oN tnet -T 5
 
 # ACK scan on specified ports
-sudo nmap 10.129.2.28 -p 21,22,25 -sA
+sudo nmap $HOST -p 21,22,25 -sA
 ```
 
 ### UDP Ports
 
 ```shell
-# UDP scan on top 100 ports (-F)
-sudo nmap $HOST -F -sU
+# UDP scan
+sudo nmap $HOST -sU
 ```
