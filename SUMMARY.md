@@ -11,7 +11,7 @@
 
 * [OSINT](reconnaissance/osint.md)
 * [Host Discovery](reconnaissance/host-discovery.md)
-* [Port Scanning](reconnaissance/port-scanning)
+* [Port Scanning](reconnaissance/port-scanning.md)
 
 ## Exploitation
 
