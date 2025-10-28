@@ -12,6 +12,7 @@
 * [Passive Reconnaissance](reconnaissance/passive-reconnaissance.md)
 * [Active Reconnaissance](reconnaissance/active-reconnaissance.md)
 * [Nmap](reconnaissance/nmap.md)
+* [Port Scanning](reconnaissance/port-scanning)
 
 ## Exploitation
 
