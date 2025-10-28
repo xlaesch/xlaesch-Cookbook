@@ -1,4 +1,3 @@
-
 # Theory
 
 When a port is shown as `filtered` , packets can be `dropped` where they are just ignored, and no response is returned from the host. They can also be `rejected`, where TCP packets are returned with an RST flag.
