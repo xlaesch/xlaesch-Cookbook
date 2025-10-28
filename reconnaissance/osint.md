@@ -3,7 +3,6 @@ description: >-
   Gather information about target systems using publicly available knowledge
   without directly engaging with the target.
 ---
-
 # Passive Reconnaissance
 
 `whois` is a request and response protocol on TCP port 43. Details:

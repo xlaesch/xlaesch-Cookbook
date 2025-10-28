@@ -9,8 +9,8 @@
 
 ## Reconnaissance
 
-* [OSINT](osint.md)
-* [Nmap](reconnaissance/nmap.md)
+* [OSINT](reconnaissance/osint.md)
+* [Host Discovery](reconnaissance/host-discovery.md)
 * [Port Scanning](reconnaissance/port-scanning)
 
 ## Exploitation
