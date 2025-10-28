@@ -122,9 +122,7 @@ Windows utility to used manage and maintain Active Directory configurations. Can
 
 #### (Legacy) GPP
 
-The GPP relevant XMLL files contains passwords encrypted using AES-256 encryption, the private key was somehow leaked so you can crack the SYSVOL with [Get-GPPPassword](https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Get-GPPPassword.ps1).
-
-
+The GPP relevant XML files contains passwords encrypted using AES-256 encryption, the private key was somehow leaked so you can crack the SYSVOL with [Get-GPPPassword](https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Get-GPPPassword.ps1).
 
 ## Quick Wins
 
