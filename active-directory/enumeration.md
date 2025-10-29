@@ -1,7 +1,5 @@
 # Active Directory Enumeration
 
-
-
 ## Important Ports
 
 | 88  | Kerberos           | Potential for Kerberos-based enumeration      |

@@ -24,7 +24,7 @@
 ## Exploitation
 
 * [Windows](exploitation/windows/README.md)
-  * [Active Directory Enumeration](exploitation/windows/active-directory-enumeration.md)
+  * [Active Directory Enumeration](enumeration.md)
 * [Linux](exploitation/linux.md)
 
 ## Privilege Escalation
