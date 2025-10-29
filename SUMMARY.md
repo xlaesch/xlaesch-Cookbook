@@ -7,11 +7,19 @@
 * [Principles of Windows](principles-of-windows.md)
 * [Principles of Linux](principles-of-linux.md)
 
+## Footprinting
+
+* [Enumeration Methodology](footprinting/enumeration-methodology.md)
+
 ## Reconnaissance
 
 * [OSINT](reconnaissance/osint.md)
 * [Host Discovery](reconnaissance/host-discovery.md)
 * [Port Scanning](reconnaissance/port-scanning.md)
+* [Firewall and IDS Evasion](reconnaissance/firewall-and-ids-evasion.md)
+* Services
+  * [FTP](reconnaissance/services/ftp.md)
+  * [SMB](reconnaissance/services/smb.md)
 
 ## Exploitation
 
@@ -30,6 +38,10 @@
 * [Credentials Harvesting](active-directory/credentials-harvesting.md)
 * [Lateral Movement and Pivoting](active-directory/lateral-movement-and-pivoting.md)
 * [BloodHound](active-directory/bloodhound.md)
+
+## LLM
+
+* [Prompt Injection](llm/prompt-injection.md)
 
 ## Web Hacking
 
