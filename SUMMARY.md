@@ -13,13 +13,13 @@
 
 ## Reconnaissance
 
-* [OSINT](reconnaissance/osint.md)
-* [Host Discovery](reconnaissance/host-discovery.md)
-* [Port Scanning](reconnaissance/port-scanning.md)
-* [Firewall and IDS Evasion](reconnaissance/firewall-and-ids-evasion.md)
+* [OSINT](osint.md)
+* [Host Discovery](host-discovery.md)
+* [Port Scanning](port-scanning.md)
+* [Firewall and IDS Evasion](firewall-and-ids-evasion.md)
 * Services
-  * [FTP](reconnaissance/services/ftp.md)
-  * [SMB](reconnaissance/services/smb.md)
+  * [FTP](ftp.md)
+  * [SMB](smb.md)
 
 ## Exploitation
 
@@ -29,31 +29,31 @@
 
 ## Privilege Escalation
 
-* [Shells](privilege-escalation/shells.md)
-* [Linux](privilege-escalation/linux.md)
-* [Windows](privilege-escalation/windows.md)
+* [Shells](shells.md)
+* [Linux](linux.md)
+* [Windows](windows.md)
 
 ## Active Directory
 
-* [Credentials Harvesting](active-directory/credentials-harvesting.md)
-* [Lateral Movement and Pivoting](active-directory/lateral-movement-and-pivoting.md)
-* [BloodHound](active-directory/bloodhound.md)
+* [Credentials Harvesting](credentials-harvesting.md)
+* [Lateral Movement and Pivoting](lateral-movement-and-pivoting.md)
+* [BloodHound](bloodhound.md)
 
 ## LLM
 
-* [Prompt Injection](llm/prompt-injection.md)
+* [Prompt Injection](prompt-injection.md)
 
 ## Web Hacking
 
-* [File Uploads](web-hacking/file-uploads.md)
-* [API](web-hacking/api.md)
-* [Content Discovery Basics](web-hacking/content-discovery-basics.md)
-* [Subdomain Enumeration](web-hacking/subdomain-enumeration.md)
-* [SQL Injection](web-hacking/sql-injection.md)
-* [IDOR](web-hacking/idor.md)
-* [File Inclusion](web-hacking/file-inclusion.md)
-* [SSRF](web-hacking/ssrf.md)
-* [XSS](web-hacking/xss.md)
-* [Race Conditions](web-hacking/race-conditions.md)
-* [Command Injection](web-hacking/command-injection.md)
-* [Burp Suite](web-hacking/burp-suite.md)
+* [File Uploads](file-uploads.md)
+* [API](api.md)
+* [Content Discovery Basics](content-discovery-basics.md)
+* [Subdomain Enumeration](subdomain-enumeration.md)
+* [SQL Injection](sql-injection.md)
+* [IDOR](idor.md)
+* [File Inclusion](file-inclusion.md)
+* [SSRF](ssrf.md)
+* [XSS](xss.md)
+* [Race Conditions](race-conditions.md)
+* [Command Injection](command-injection.md)
+* [Burp Suite](burp-suite.md)
