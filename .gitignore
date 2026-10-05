@@ -1,0 +1,8 @@
+# Obsidian session state and local cache
+.obsidian/workspace*.json
+.obsidian/cache/
+.trash/
+
+# OS metadata
+.DS_Store
+Thumbs.db
