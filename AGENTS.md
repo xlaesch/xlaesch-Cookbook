@@ -3,7 +3,7 @@
 This is an Obsidian vault holding personal offensive-security notes. Two content trees:
 
 - `Labs/` — per-box walkthroughs (free-form, HTB/THM writeups).
-- `xlaesch-Cookbook/` — the technique reference. **Style-consistency matters here.** New/edited content below refers to this tree.
+- `network-pentesting/` — the technique reference. **Style-consistency matters here.** New/edited content below refers to this tree.
 
 ## Where things live (cookbook taxonomy)
 
