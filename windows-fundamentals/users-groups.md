@@ -1,51 +1,51 @@
+Windows users and groups have different privileges and duties. Administrator accounts have full access to system resources and settings and can manage other users.
 
-Privileges and duties of users and group on Windows system differ. 
+# Identify the Current User
 
-```cmd
+```powershell
+# identify the account accessing the system
 whoami
 ```
 
-Tells use which user account is accessing the system. With format `domain\username`. If the host is not included in the domain, the hostname will be shown instead of the domain.
+> Output uses `domain\username`; a standalone host shows the hostname in place of the domain.
 
-Administrator accounts have full access to all system resources and settings, and can manage other user accounts.
+# Local Users
 
-We can manage users in Start --> Computer Management --> Local Users and Groups --> Users. Default users are:
+Open **Start → Computer Management → Local Users and Groups → Users** to manage users. Default users:
 
 ![[Pasted image 20261002115609.png]]
 
-Users should have as little authority as necessary, and there should be a limited amount of Administrator accounts. 
+Users should have only the authority they need, with a limited number of administrator accounts.
+
 # Groups
 
-Groups make it easier to manage users and system resources. There are local groups used to manage resources on a specific omputer and domain groups to manage across multiple computers on the network. These are the default groups on a Windows Server
+Groups simplify management of users and resources. Local groups manage resources on one computer; domain groups manage resources across computers on a network.
+
+Default groups on Windows Server:
 
 ![[Pasted image 20261002115920.png]]
+
 # User Management
 
-```shell
+These functions are also available through **Windows + R → `lusrmgr.msc`**.
+
+```powershell
+# list users on the system
 net user
-```
 
-Displays the username within the system.
+# display details for a specific user
+net user <user>
 
-```
-net user LetsDefend
-```
-
-Displays details for a specific user.
-
-```
+# view password settings and logon restrictions
 net accounts
 ```
 
-See the configurations related to password usage and logon restrictions.
+# Group Management
 
-```
+```powershell
+# list local groups
 net localgroup
 
 # view users in a group
-net localgroup Administrators
+net localgroup <group>
 ```
-
-Change things for the groups on the system.
-
-All these functions are available with "Windows + R" and `lusrmgr.msc`

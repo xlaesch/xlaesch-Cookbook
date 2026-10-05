@@ -1,50 +1,55 @@
-![[Pasted image 20261002124521.png]]Active Directory is a critical component that offers organizations efficiency, security and ease of management.
+Active Directory provides efficiency, security, and centralized management for organizations.
+
+![[Pasted image 20261002124521.png]]
 
 # Default Accounts
 
-Default Accounts are pre-created by the OS or applications that have a unique username and password (like "Administrator" and "Guest"). They come with basic security settings and frequently used passwords, therefore creating special and need-based accounts is better. These default accounts should be disabled or deleted.
+Default accounts are created by the OS or applications with a unique username and password, such as `Administrator` and `Guest`. They come with basic security settings and frequently used passwords; create accounts for specific needs and disable or delete default accounts.
 
 # Authorized Groups
 
-Domain Admins and Enterprise Admins are very powerful groups, so ordinary user accounts should not be in these authorized groups. 
+Domain Admins and Enterprise Admins are powerful groups. Ordinary user accounts should not belong to these groups.
 
 # Audit Policy
 
-Allows to monitor, control and record events on a network. Can be accessed with "Computer Configuration --> Policies --> Windows Settings --> Security Settings --> Advanced Audit Policy Configuration".
+Audit policy monitors, controls, and records network events.
+
+Open **Computer Configuration → Policies → Windows Settings → Security Settings → Advanced Audit Policy Configuration**.
 
 # Local Admin Password Solution (LAPS)
 
-Method that enables regular and automatic management of passwords of local admin accounts. 
+LAPS regularly and automatically manages local administrator passwords.
 
-`Win + R` → `gpmc.msc` → edit the relevant GPO → Computer Configuration → Policies → Administrative Templates → System → LAPS
+Open **Windows + R → `gpmc.msc`**, edit the relevant GPO, then navigate to **Computer Configuration → Policies → Administrative Templates → System → LAPS**.
 
 # Lockout Policy
 
-Locks accounts and prevents access for a certain period of time as a result of incorrect password attempts. This mainly for slowing down brute force attempts. 
+Lockout policy prevents account access for a period after incorrect password attempts, slowing brute-force attacks.
 
-Computer Configuration --> Policies --> Windows Settings --> Security Settings --> Account Policies --> Account Lockout Policy
+Open **Computer Configuration → Policies → Windows Settings → Security Settings → Account Policies → Account Lockout Policy**.
 
 # Secure Admin Workstation (SAW)
 
-Ensures that administrators operations are secured by locking down a computer only for privileged administrative work, by keeping credentials from every day software.
+A SAW restricts a computer to privileged administration, keeping administrator credentials away from everyday software.
 
 # Service Accounts
 
-Service accounts are used to ensure the proper functioning of systems, applications and services. 
-- A separate account should be used for each service or application.
-- Minimum privileges needed.
-- Passwords should be changed.
+Service accounts support systems, applications, and services.
+
+- Use a separate account for each service or application.
+- Grant only the minimum required privileges.
+- Change passwords.
 
 # Events
 
-Users activiers table.
+## User Activities
 
 ![[Pasted image 20261002124539.png]]
 
-Groups Activities Table
+## Group Activities
 
 ![[Pasted image 20261002124548.png]]
 
-# Local Admin Group Membership Control 
+# Local Admin Group Membership Control
 
-No standard user should be in the local admin group.
+Standard users should not belong to the local administrator group.

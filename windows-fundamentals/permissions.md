@@ -1,20 +1,22 @@
+Windows users have profiles and permissions that restrict access to files and folders. File permissions are inherited from the parent folder.
 
-Each users has its own profile and permissions to prevent access to files/folders. Windows gets it permissions from its parent folder in Windows.
+# File Permissions
 
-File permissions can be viewed by Right-Clicking and viewing properties.
-
-6 different permissions exist.
+Right-click a file or folder, then select **Properties** to view its permissions. Six permission types exist:
 
 ![[Pasted image 20260924141505.png]]
 
-We can change the properties via the "Advanced" button in "Properties". Users without administrator privileges on the Windows environment are not able to access other directories.
+Use **Properties → Advanced** to change permissions.
+
+> Users without administrator privileges cannot access other directories in the Windows environment.
 
 # UAC
 
-Security feature that prevents unauthorized access without administrator permission. Can be easily bypassed.
+User Account Control (UAC) prevents unauthorized access without administrator permission and can be bypassed.
 
-Has 4 different levels
-1. Always notify - notified before applications and users make changes. Most secure.
-2. Notify me only when apps try to make changes to my computer
-3. Notify me only when apps try to make changes to my computer (do not dim my desktop)
-4. Never notify me.
+| **Level** | **Behavior** |
+| --- | --- |
+| Always notify | Notify before applications and users make changes; the most secure level. |
+| Notify me only when apps try to make changes to my computer | Notify when applications attempt changes. |
+| Notify me only when apps try to make changes to my computer (do not dim my desktop) | Notify without dimming the desktop. |
+| Never notify me | Disable notifications. |

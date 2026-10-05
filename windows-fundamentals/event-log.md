@@ -1,21 +1,30 @@
-Event Logs are logs collected through the Windows operating system. Some important events can be (powershell, deleting event logs, starting and stopping services, RDP activity, etc.)
+Windows Event Logs record operating system activity, including PowerShell use, event-log deletion, service starts and stops, and RDP activity. Each record has an Event ID that distinguishes the event type.
 
-Each record type has an "Event ID" value to distinguish it from each other. There are 3 main event log titles
-- Applications - anything relating to applications in the system.
-- System - relating to basic components
-- Security
+# Log Types
 
-To open the GUI we do "Windows + R" and `eventvwr`
+| **Log** | **Description** |
+| --- | --- |
+| Application | Events relating to applications on the system. |
+| System | Events relating to basic system components. |
+| Security | Security events. |
 
-An event list can be found: https://andreafortuna.org/2019/06/12/windows-security-event-logs-my-own-cheatsheet/
+# Event Viewer
 
-```
+Open **Windows + R**, then enter `eventvwr`.
+
+[Windows security event log cheatsheet](https://andreafortuna.org/2019/06/12/windows-security-event-logs-my-own-cheatsheet/).
+
+# Query Events
+
+| **Option** | **Description** |
+| --- | --- |
+| `query-events` | Query events from a log or log file. |
+| `/rd` | Reverse direction. |
+| `/count` | Log count. |
+| `/format` | Output format. |
+| `/q` | XPath query. |
+
+```powershell
+# query the most recent Security event with Event ID 4625
 wevtutil query-events Security /rd:true /count:1 /format:text /q:"Event[System[(EventID=4625)]]"
 ```
-
-"query-events" parameter : Query events from a log or log file.
-"/rd" parameter : Reverse direction.
-"/count" parameter : Log count.
-"/format" parameter : Output format.
-"/q" parameter : XPathQuery.
-

@@ -1,23 +1,31 @@
-### User and Machine Accounts
+Users exist in both local and Active Directory environments. Local accounts secure resources on a standalone host, while domain users access domain resources such as files, servers, printers, and intranet hosts.
 
-- Users are created on both local and AD environments.
-- When logged in, the system verifies password and creates an access token.
-	- The token describes security content of a process and includes user's security identity.
-	- Whenever a user interacts with a process the token is presented.
+# Authentication and Access Tokens
 
-Local accounts are stored on a particular system. They are considered security principals but can only manage access to and secure resources on a standalone host. 
-1. `Administrator` has SID `S-1-5-domain-500` it has almost full control over every resource on the system. 
-2. `Guest` disabled by default. Allows users without an account to log in temporarily on the account with limited access rights.
-3. `SYSTEM` or `NT AUTHORITY\SYSTEM` used by the OS to perform internal functions. Profile does not exist for this account but it has permissions over almost everything. Highest level of permissions on the system.
-4. `Network Service` predefine local used by Service Control Manager (SCM) for running Windodws services. It will present credentials to remote services for whichever service runs with this context.
-5. `Local Service` another SCM managed local account. Has minimal privileges and presents anonymous credentials to the network.
+At logon, the system verifies the password and creates an access token. The token describes a process's security context, includes the user's security identity, and is presented when the user interacts with a process.
 
-Domain Users are granted access to domain resources such as file, servers. printers, intranet hosts, etc. 
-	- `KRBTGT` is a specific domain user that is built-in to AD and is responsible for KDC. Target for many attacks.
+# Local Accounts
 
-User naming attributes:
-1. `userPrincipalName` primary logon name for the user
-2. `ObjectGUID` Unique ID for the user. Never changes even if user is deleted.
-3. `SAMAccountName` logon account name that supports previous clients and servers.
-4. `ObjectSID` the SID of the user. Identifies a user and its group
-5. `sIDHistory` previous SIDs of the user.
+Local accounts are stored on a particular system and are considered security principals.
+
+| **Account** | **Description** |
+| --- | --- |
+| `Administrator` | SID `S-1-5-domain-500`; almost full control over every resource on the system. |
+| `Guest` | Disabled by default; allows temporary logon without an account, with limited access rights. |
+| `SYSTEM` (`NT AUTHORITY\SYSTEM`) | Used by the OS for internal functions. Has no profile and has the highest permission level, with access to almost everything. |
+| `Network Service` | Predefined local account used by the Service Control Manager (SCM) to run Windows services; presents credentials to remote services. |
+| `Local Service` | SCM-managed local account with minimal privileges; presents anonymous network credentials. |
+
+# Domain Accounts
+
+`KRBTGT` is a built-in domain user responsible for the Key Distribution Center (KDC) and is a target for many attacks.
+
+# User Naming Attributes
+
+| **Attribute** | **Description** |
+| --- | --- |
+| `userPrincipalName` | Primary logon name. |
+| `ObjectGUID` | Unique user ID; never changes, even if the user is deleted. |
+| `SAMAccountName` | Logon account name supporting older clients and servers. |
+| `ObjectSID` | User SID; identifies the user and its group. |
+| `sIDHistory` | Previous user SIDs. |

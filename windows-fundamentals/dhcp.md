@@ -1,23 +1,20 @@
-
-Dynamic Host Configuration Protocol (DHCP) facilitates the communication of users and systems on the network by assigning IP addresses. 
-
-Attackers can add their own DHCP server to the network and create malicious network configurations, and snoop into information exchange. 
+Dynamic Host Configuration Protocol (DHCP) assigns IP addresses to users and systems on a network. Attackers can add their own DHCP server to supply malicious network configurations and snoop on information exchanges.
 
 # MAC Filtering
 
-Control whether devices with a specific MAC can receive an IP, this is needed when only certain devices on the network can receive an IP.
+Control whether devices with a specific MAC address can receive an IP address.
 
-After opening "Server Manager", select "DHCP" from the "Tools" menu. On the DHCP Management screen that opens, from the “IPv4” -> “Filter” section, right-click on the “Allow” or “Deny” section and select “New Filter”.
+Open **Server Manager → Tools → DHCP → IPv4 → Filter**. Right-click **Allow** or **Deny**, then select **New Filter**.
 
 # Rogue DHCP Blocking
 
-Unauthorized DHCP server starts serving on a network.
+An unauthorized DHCP server can start serving clients on a network. DHCP server authorization requires the server to be in an Active Directory domain.
 
-To use DHCP server authorization, the DHCP server must be in an Active Directory domain. To authorize the DHCP server, open the DHCP console, right-click the DHCP server and click "Authorize"
+Open the DHCP console, right-click the DHCP server, then select **Authorize**.
 
-We can see DHCP logs under the "C:\Windows\system32\dhcp".
+# Logs
 
-Some events to keep track of
+DHCP logs are stored under `C:\Windows\system32\dhcp`. Events to monitor:
 
 ![[Pasted image 20261002163730.png]]
 

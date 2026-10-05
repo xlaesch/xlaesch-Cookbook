@@ -1,26 +1,24 @@
-
-DNS translates domain name in to corresponding IP addresses when a URL is entered in a web browser. Attackers can manipulate DNS queries and redirect users to fake sites (DNS poisoning or spoofing). 
-
-Windows DNS Server is a service provided by Microsoft and is typically used by Windows-based networks. 
+DNS translates domain names into IP addresses. Windows DNS Server provides this service on Windows-based networks; attackers can manipulate DNS queries to redirect users to fake sites through poisoning or spoofing.
 
 # Zone Transfer Restriction
 
-DNS Zone Transfer is the process of copying all DNS records from the primary DNS server (master) to the second DNS servers (slave or backup). 
+A zone contains the records of a DNS namespace. Zone transfers copy records from a primary DNS server to secondary servers.
 
-DNS data is structured into a zone containing all records of a particular DNS namespace. Two types of zone transfers exist:
-- Full Zone Transfer (AXFR) copies all information of a zone from the primary DNS server to the backup.
-- Incremental Zone Transfer (IXFR) copies changes in a zone from the primary DNS to the backup.
+| **Transfer** | **Description** |
+| --- | --- |
+| AXFR | Full zone transfer; copies all zone information from the primary server to a backup. |
+| IXFR | Incremental zone transfer; copies changes from the primary server to a backup. |
 
-To restrict zone transfers we can:
-Open the DNS management console. To do this, open "Server Manager", then select the "Tools" menu and click "DNS". On the screen that opens, right-click on the relevant zone and click on “Properties”. Then switch only allow Zone Transfer to restricted servers.
+Open **Server Manager → Tools → DNS**, right-click the relevant zone, then select **Properties**. Allow zone transfers only to restricted servers.
 
-# DNSSec
+# DNSSEC
 
-Standards to verify the integrity and authenticity of DNS queries and responses. To activate, open the "Server Manager", then select the "Tools" menu and click on the "DNS" option. Right-click on the zone you will apply and click “DNSSEC” -> “Sign the Zone”.
+DNSSEC verifies the integrity and authenticity of DNS queries and responses.
 
---- 
+Open **Server Manager → Tools → DNS**, right-click the relevant zone, then select **DNSSEC → Sign the Zone**.
 
-Logs for DNS will appear as such:
+# Logs
+
+DNS logs appear as follows:
 
 ![[Pasted image 20261002162210.png]]
-

@@ -1,49 +1,36 @@
+A process is a program under execution. Processes have parent-child relationships, with a parent creating one or more child processes.
 
-Process is a program under execution in an active program. 
+# Process Relationships
 
-Parent-child relationship between the two processes:
-- Process - program under execution
-- Parent Process - process that created one or more child processes.
-- Child Process - created by another process. 
+| **Type** | **Description** |
+| --- | --- |
+| Process | A program under execution. |
+| Parent process | A process that created one or more child processes. |
+| Child process | A process created by another process. |
 
 # Legitimate Processes
 
-These all exist on `C:\Windows\System32`
+These processes exist in `C:\Windows\System32`.
 
-## wininit.exe
+| **Process** | **Description** |
+| --- | --- |
+| `wininit.exe` | Windows Initialization Process; starts `services.exe`, `lsass.exe`, and `lsm.exe` with `SYSTEM` privileges. |
+| `services.exe` | Starts and stops services. Runs as `SYSTEM`; only one should exist. Child processes include `svchost.exe`, `dllhost.exe`, `taskhost.exe`, and `spoolsv.exe`. |
+| `svchost.exe` | Hosts services that run from non-executable DLLs. Responsible for managing multiple DLL services; all DLLs share the same process. |
+| `lsass.exe` | Local Security Authority Subsystem Service; handles authentication and contains user passwords. |
+| `winlogon.exe` | Performs user login and logout operations. |
+| `explorer.exe` | Parent of every GUI process; runs with the logged-in user's privileges. |
 
-Windows Initialization Process responsible for started the `services.exe`, `lsass.exe` and `lsm.exe`. It has `SYSTEM` privileges.
+# List Processes
 
-## services.exe
-
-The process responsible for starting and stopping services.  “Svchost.exe”, “dllhost.exe”, “taskhost.exe”, and “spoolsv.exe” are child processes of the “Services.exe”. Ran as `SYSTEM`. Only 1 should exist.
-
-## svchost.exe
-
-A generic host process for services that run from DLLs. DLLs are non-executable so they are run with svchost for triggering the services of the OS . Responsible  for the usage and management of multi-dll services. All DLLs share the same svchost process.
-
-## lsass.exe
-
-Local Security Authority Subsystem Service is responsible for authentication. Contains the user passwords in the system. 
-
-## winlogon.exe
-
-Performs the login and logout operations of the users in the OS. 
-
-## explorer.exe
-
-Parent process of every process that has GUI. Runs with the privileges of logged-in user.
-
-### CLI
-
-```
+```powershell
+# list running processes
 tasklist
 ```
 
-Lists running processes.
+# Terminate a Process
 
+```powershell
+# terminate a process by its process ID
+taskkill /PID <PID>
 ```
-taskkill /PID 2812
-```
-
-Terminate processes, necessitates the Process ID.

@@ -1,28 +1,28 @@
-Programs that have their own process running in the background.
+Windows services are programs with their own processes running in the background.
 
-Services can be accessed via `services.msc`. in the "Windows + R" dialog.
+# Services Console
 
-```
-sc query
-```
+Open **Windows + R**, then enter `services.msc`.
 
-View running services.
+# Query Services
 
-```
-sc query type=service state=all
-```
+```powershell
+# view running services
+sc.exe query
 
-View all services available.
+# view all available services
+sc.exe query type=service state=all
 
-```
-sc query wuauserv
-```
-
-Get information about a service.
-
-```
-sc start wuauserv
-sc stop wuauserv
+# get information about a specific service
+sc.exe query <service_name>
 ```
 
-Start and stop services.
+# Start and Stop a Service
+
+```powershell
+# start a service
+sc.exe start <service_name>
+
+# stop a service
+sc.exe stop <service_name>
+```

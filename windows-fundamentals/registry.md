@@ -1,26 +1,38 @@
-Windows Registry is a database that contains the OSes configuration for programs. The registry is usually a target for attackers, they can view and enumerate much of the system through it and even add their own entries for persistence.
+The Windows Registry stores operating system and program configuration. Attackers can enumerate the system through it and add entries for persistence.
 
-Windows registry entries are located in `%SystemRoot%\System32\Config`. Registry contains keys and values with keys being similar to container objects like folders. 
+# Keys and Values
 
-> HKEY_LOCAL_MACHINE\Software\Microsoft\Windows refers to the subkey "Windows" of the subkey "Microsoft" of the subkey "Software" of the HKEY_LOCAL_MACHINE root key.
+Registry entries are located in `%SystemRoot%\System32\Config`. Keys act as containers, similar to folders, and hold values.
 
-`HKEY_LOCAL_MACHINE` or `HKLM` contains
-- HARDWARE
-- SAM - containing encrypted versions of the passwords.
-- SECURITY - containing security policies
-- SOFTWARE - configurations of the OS services as well as the programs
-- SYSTEM
-HKEY_CURRENT_CONFIG or HKCC contains hardware configuration.
-HKEY_CLASSES_ROOT or HKCR contains software settings, shortcuts, UI, etc.
-HKEY_CURRENT_USER or HKCU contains configuration of logged-in users.
-HKEY_USERS or HKU contains all users configuration. 
+> `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows` refers to the `Windows` subkey within `Software\Microsoft` under `HKEY_LOCAL_MACHINE`.
 
-Reg extension files is the file format saved when exporting the registry files. 
+# Root Keys
 
-To access it we can use "Windows + R" then `regedit`.
+| **Key** | **Description** |
+| --- | --- |
+| `HKEY_LOCAL_MACHINE` (`HKLM`) | Contains `HARDWARE`, `SAM`, `SECURITY`, `SOFTWARE`, and `SYSTEM`. |
+| `HKEY_CURRENT_CONFIG` (`HKCC`) | Hardware configuration. |
+| `HKEY_CLASSES_ROOT` (`HKCR`) | Software settings, shortcuts, and UI configuration. |
+| `HKEY_CURRENT_USER` (`HKCU`) | Configuration for the logged-in user. |
+| `HKEY_USERS` (`HKU`) | Configuration for all users. |
 
-It is also possible to execute operations via the command line.
+## HKLM Subkeys
 
-```
-reg query HKEY_LOCAL_MACHINE\SYSTEM\...
+| **Subkey** | **Description** |
+| --- | --- |
+| `HARDWARE` | Hardware. |
+| `SAM` | Encrypted versions of passwords. |
+| `SECURITY` | Security policies. |
+| `SOFTWARE` | Operating system service and program configuration. |
+| `SYSTEM` | System. |
+
+# Registry Editor
+
+Open **Windows + R**, then enter `regedit`. Exported registry files use the `.reg` extension.
+
+# Query a Key
+
+```powershell
+# query a registry key from the command line
+reg query "HKEY_LOCAL_MACHINE\SYSTEM\<subkey>"
 ```

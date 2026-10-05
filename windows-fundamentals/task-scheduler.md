@@ -1,38 +1,43 @@
+Scheduled tasks execute operations at specified times or intervals. Task Scheduler manages these tasks on Windows.
 
-Scheduled task is the execution of certain operations on the system at certain time intervals or at certain times. 
+# Task Scheduler Console
 
-On windows we can manage scheduled tasks via "Windows + R" and `taskschd.msc`
+Open **Windows + R**, then enter `taskschd.msc`.
 
-```
+# Query Tasks
+
+```powershell
+# view all scheduled tasks
 schtasks
+
+# view a specific task
+schtasks /Query /TN "<task_name>"
 ```
 
-To view all sheduled tasks.
+# Enable a Task
 
-```
-schtasks /Query /TN TrainingTask
-```
-
-View a specific task.
-
-```
-schtasks /Change /ENABLE /TN TrainingTask
+```powershell
+# enable a scheduled task
+schtasks /Change /ENABLE /TN "<task_name>"
 ```
 
-Enable a scheduled task.
+# Run a Task
 
-```
-schtasks /Run /TN TrainingTask
-```
-
-Run the scheduled task.
-
-```
-schtasks /End /TN TrainingTask
+```powershell
+# run a scheduled task
+schtasks /Run /TN "<task_name>"
 ```
 
-Terminating the scheduled task.
+# End a Task
 
+```powershell
+# terminate a scheduled task
+schtasks /End /TN "<task_name>"
 ```
-schtasks /Delete /TN TrainingTask
+
+# Delete a Task
+
+```powershell
+# delete a scheduled task
+schtasks /Delete /TN "<task_name>"
 ```

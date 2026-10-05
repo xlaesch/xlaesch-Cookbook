@@ -1,15 +1,15 @@
+Windows Management Instrumentation (WMI) provides access to Windows operating system components, allowing local and remote access.
 
-Featured to access components of the Windows OS, allowing local and remote access.
+# Operating System Information
 
-```
+```powershell
+# information about the operating system
 wmic os list brief
 ```
 
-Information about the OS.
+# User Accounts
 
-```
+```powershell
+# get the names of users on the system
 wmic useraccount get name
 ```
-
-Get the names of the users in the system.
-

@@ -1,24 +1,26 @@
-4Tool that allows blocking or allowing incoming network packets to the host machine and outgoing networks packets from the host machine. 
+A firewall allows or blocks incoming and outgoing network packets on a host. Rules define the conditions that determine whether packets can pass through the firewall.
 
-A firewall rule is a set of conditions used to determine whether a network packet is allowed to pass through the firewall.
+# Firewall Console
 
-To access the GUI "Windows + R" then `wf.msc`
+Open **Windows + R**, then enter `wf.msc`.
 
-```
+# List Rules
+
+```powershell
+# list all firewall rules
 netsh advfirewall firewall show rule name=all
 ```
 
-List all firewall rules.
+# Inspect a Rule
 
-```
-netsh advfirewall firewall show rule name=”TCP Port 4444 Block”
-```
-
-Displaying the information of the firewall rule.
-
-```
-netsh advfirewall firewall delete rule name="TCP Port 4444 Block"
+```powershell
+# display information about a specific firewall rule
+netsh advfirewall firewall show rule name="<rule_name>"
 ```
 
-Deleting a firewall rule.
+# Delete a Rule
 
+```powershell
+# delete a specific firewall rule
+netsh advfirewall firewall delete rule name="<rule_name>"
+```

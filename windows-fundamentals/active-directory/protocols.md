@@ -1,29 +1,44 @@
-### Kerberos, DNS, LDAP, MSRPC
+Kerberos, DNS, LDAP, and MSRPC support authentication, service discovery, directory access, and remote operations in Active Directory.
 
-- Kerberos is the default authentication protocol for domain accounts. 
-	- Port 88
-	- Stateless authentication protocol based on tickets instead of transmitting user passwords over the network. DCs have Key Distribution Center that issues tickets. 
-	- A login request to a system creates a ticket with the encrypted ticket. The KDC creates Ticket Granting Ticket (TGT)
-	- The TGT is presented to the DC and then a Ticket Granting Service is created. 
-	- The TGS is presented to the application.
- ![[Pasted image 20260118150559.png]]
+# Kerberos
 
-- AD DS uses DNS to allow clients to locate DCs and find to find the IP of other domain joined clients. AD maintains a databse of services running on the network via a service record (SRV). 
+Kerberos is the default authentication protocol for domain accounts and uses port `88`. It is a stateless, ticket-based protocol that avoids transmitting user passwords over the network; domain controllers contain the Key Distribution Center (KDC) that issues tickets.
 
-- AD uses Lightweight Directory Access Protocol (LDAP). 
-	- LDAP Port 389
-	- LDAP over SSL uses 636 (LDAPS)
-	- LDAP Is the language applications use to communicate with other server that provide directory services.
-		- "how systems speak to AD"
-	- Similar to the way Apache and HTTP work. Apache is the web server that uses the HTTP protocol. AD is the directory server that uses the LDAP protocol.
-- Two authentication types
-	- Simple authentication: Includes anonymous authentication, unauthenticated. Username + password to create a BIND request to auth to the LDAP server.
-	- SASL authentication: uses other authentication services like Kerberos to bind to the LDAP server. LDAP protocol used to send an LDAP message to the auth service which creates a series of challenges.
-	- LDAP authentication messages are sent in cleartext.
+1. A logon request creates an encrypted ticket; the KDC creates a Ticket Granting Ticket (TGT).
+2. The TGT is presented to the domain controller, which creates a Ticket Granting Service (TGS).
+3. The TGS is presented to the application.
 
-- MSRPC is Microsoft's implementation of Remote Procedure Call (RPC), a communication technique used for client-server model-based applications. Essentially lets program execute a function on another system as if it were a local function call.
-- AD uses four RPC interfaces
-	- `lsarpc` calls the LSA system to perform management on domain security policies
-	- `netlogon` windows process used to authenticate users and other services in domain environment
-	- `samr` provides management functionality for the domain account database. IT admins use it manage the whole AD essentially. Attackers can use to visually map out the AD network. Orgs should force the registry to only allow admins to perform remote SAM queries.
-	- `drsuapi`is the Microsoft API that implements directory replication for a multi-DC environment. Attackers can use it create a copy of NTDS.dit to retrieve password hashes.
+![[Pasted image 20260118150559.png]]
+
+# DNS
+
+AD DS uses DNS to locate domain controllers and resolve the IP addresses of domain-joined clients. Service records (SRV) maintain information about services running on the network.
+
+# LDAP
+
+Lightweight Directory Access Protocol (LDAP) is the language applications use to communicate with directory servers: how systems speak to AD. AD uses LDAP in the same way that Apache uses HTTP.
+
+| **Protocol** | **Port** |
+| --- | --- |
+| LDAP | `389` |
+| LDAP over SSL (LDAPS) | `636` |
+
+## Authentication Types
+
+| **Type** | **Description** |
+| --- | --- |
+| Simple | Includes anonymous and unauthenticated authentication; a username and password create a BIND request to authenticate to the LDAP server. |
+| SASL | Uses other authentication services, such as Kerberos, to bind to the LDAP server. LDAP sends a message to the authentication service, which creates a series of challenges. |
+
+> LDAP authentication messages are sent in cleartext.
+
+# MSRPC
+
+Microsoft Remote Procedure Call (MSRPC) lets client-server applications execute a function on another system as if it were a local function call.
+
+| **Interface** | **Description** |
+| --- | --- |
+| `lsarpc` | Calls the LSA system to manage domain security policies. |
+| `netlogon` | Windows process that authenticates users and services in a domain environment. |
+| `samr` | Manages the domain account database. Administrators use it to manage AD; attackers can use it to map the network. Restrict remote SAM queries to administrators through the registry. |
+| `drsuapi` | Directory replication API for environments with multiple domain controllers. Attackers can use it to copy `NTDS.dit` and retrieve password hashes. |
